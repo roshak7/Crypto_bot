@@ -10,7 +10,7 @@ class ConverterException(Exception):
 
 class UserInfo:
     def __init__(self):
-        self.f = "RUB"
+        self.f = "BTC"
         self.t = "USD"
 
 
@@ -47,8 +47,8 @@ class Convertor:
         except ValueError:
             raise ConverterException(f'Не удалось обработать количество {amount}')
 
-        r = requests.get(f'https://free.currconv.com/api/v7/convert?q={quote_formatted}_{base_formatted}&compact=ultra&apiKey=d36a50e14b5d1499e823')
-
+        r = requests.get(f'https://min-api.cryptocompare.com/data/price?fsym={quote_formatted}&tsyms={base_formatted}')
+        print(json.loads(r.content))
         result = float(json.loads(r.content)[f"{quote_formatted}_{base_formatted}"]) * amount
 
         return round(result, 3)
