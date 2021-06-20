@@ -48,7 +48,6 @@ class Convertor:
             raise ConverterException(f'Не удалось обработать количество {amount}')
 
         r = requests.get(f'https://min-api.cryptocompare.com/data/price?fsym={quote_formatted}&tsyms={base_formatted}')
-        print(json.loads(r.content))
-        result = float(json.loads(r.content)[f"{quote_formatted}_{base_formatted}"]) * amount
+        result = float(json.loads(r.content)[base_formatted]) * amount
 
         return round(result, 3)

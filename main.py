@@ -10,8 +10,16 @@ db = UserDB()
 
 @bot.message_handler(commands=['start', 'help'])
 def start(message: telebot.types.Message):
-    text = r'/set - Список доступных валют,' \
-           r'валюта1 валюта2 сумма - перевод суммы из валюты один в валюту2'
+    text = r'''/set - Список доступных валют, валюта1 --> валюта2 - перевод сумм из валюты1 в валюту2. 
+    ...Список монеток: 
+    ...BTC = 0.066,
+    ...ETH = 0.55,
+    ...ADA = 115,
+    ...BCH = 0.32,
+    ...DOT = 8.35,
+    ...TLM = 439.97,
+    ...XRP = 304.79'''
+
     bot.send_message(message.chat.id, text)
 
 

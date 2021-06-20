@@ -1,9 +1,14 @@
 TOKEN = '1792762681:AAFNOqTJgYLnphLBdYnAIisaFn4nCsja4_M'
 
 exchanger = {
-    'биткоин': 'BTC',
-    'эфириум': 'ETH',
-    'доллар': 'USD',
-    'доге': 'DOGE',
-    'Ripple': 'XRP',
+    'Биткоин': 'BTC',
+    'Эфириум': 'ETH',
+    'Кардано': 'ADA',
+    'Биткоин кэш': 'BCH',
+    'Полкадот': 'DOT',
+    'TLM': 'TLM',
+    'Рипл': 'XRP',
+    'Доллар': 'USD',
+    'Рубль': 'RUB',
+
 }
